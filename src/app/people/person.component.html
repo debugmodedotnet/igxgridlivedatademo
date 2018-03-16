@@ -1,0 +1,20 @@
+
+<h2>{{title}}  </h2>
+ <igx-slider id="slider" [minValue]="100" [maxValue]="100000" [step]="100" [(ngModel)]="rowsCount" ></igx-slider>
+<label igxLabel for="slider">Number of Rows : {{rowsCount}}</label>
+<div class="button-sample-custom">
+        <button igxButton="raised" igxRipple="white" (click)='rebindgrid()'>Rebind the grid</button>
+    </div>
+<igx-grid #grid1 [autoGenerate]="false" [height]="'800px'">
+    <igx-column field="Id" header="Id" dataType="number"></igx-column>
+    <igx-column field="Name" header="Name" dataType="string"></igx-column>
+    <igx-column field="Age" header="Age" dataType="number"></igx-column>
+    <igx-column field="BirthDay" header="Birthday" dataType="string"></igx-column>
+    <igx-column field="Street" header="Street" dataType="string"></igx-column>
+    <igx-column field="City" header="City" dataType="string"></igx-column>
+    <igx-column field="Phone" header="Phone" dataType="string"></igx-column>
+    <igx-column field="Country" header="Country" dataType="string"></igx-column>
+    <igx-column field="Language" header="Language" dataType="string"></igx-column>
+    <igx-column field="Sports" header="Sports" dataType="string"></igx-column>
+
+</igx-grid>
