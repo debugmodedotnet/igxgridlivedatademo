@@ -133,6 +133,7 @@ export class InMemoryMockDataService implements InMemoryDbService {
             new BankingEntity('SavingAccount', 'BG10FINV91501003939179', 'EUR', 228.65, 228.65, 228.65),
             new BankingEntity('SavingAccount', 'BG10FINV91501003939179', 'EUR', 228.65, 228.65, 228.65)
         ];
+
         return { 'tradesblotters': TradesBlotters, 'visastocks': VisaStockEntities,
                 'bankingentities': BankingEntities  };
     }

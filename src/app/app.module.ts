@@ -14,6 +14,8 @@ import { IgxNavigationDrawerModule,
          IgxRippleModule,
          IgxGridModule,
          IgxIconModule,
+         IgxSliderModule,
+         IgxButtonModule
          } from 'igniteui-angular/main';
 
 
@@ -25,12 +27,12 @@ import {VisaStockComponent} from './visastock/visastock.component';
 import {TradesBolotterComponent} from './tradesblotter/tradesblotter.component';
 import {TradesBlotterService} from './tradesblotter/tradesblotter.service';
 import {InMemoryMockDataService} from './shared/inmemory.data.service';
-
+import {PersonComponent} from './people/person.component';
 import {VisaStockrService} from './visastock/visastock.service';
 import {BankingService} from './banking/banking.service';
 @NgModule({
   declarations: [
-    AppComponent, AboutComponent, BankingComponent, VisaStockComponent, TradesBolotterComponent
+    AppComponent, AboutComponent, PersonComponent, BankingComponent, VisaStockComponent, TradesBolotterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,8 @@ import {BankingService} from './banking/banking.service';
     IgxLayoutModule,
     IgxRippleModule,
     IgxIconModule,
+    IgxButtonModule,
+    IgxSliderModule,
     IgxGridModule.forRoot(),
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
