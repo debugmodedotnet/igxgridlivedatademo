@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* @import '~igniteui-angular/core/styles/themes/index'; */
 
-.grid__wrapper {
+
+/* .grid__wrapper {
     @include igx-grid($grid-sample-theme);
     @include igx-progress-linear($progressBar-sample-theme);
     width: 1000px;
@@ -20,4 +22,9 @@
     width: 100%;
     height: 100%;
     display: flex;
+} */
+
+.content-wrap{
+    margin-left: 100px; 
+
 }

@@ -1,20 +1,38 @@
+<div class="container">
+    <h2>{{title}} </h2>
+    <div class="row">
 
-<h2>{{title}}  </h2>
- <igx-slider id="slider" [minValue]="100" [maxValue]="100000" [step]="100" [(ngModel)]="rowsCount" ></igx-slider>
-<label igxLabel for="slider">Number of Rows : {{rowsCount}}</label>
-<div class="button-sample-custom">
-        <button igxButton="raised" igxRipple="white" (click)='rebindgrid()'>Rebind the grid</button>
+        <div class="col-md-9 col-md-offset-1">
+            <igx-slider id="slider" [minValue]="100" [maxValue]="100000" [step]="100" [(ngModel)]="rowsCount"></igx-slider>
+        </div>
     </div>
-<igx-grid #grid1 [autoGenerate]="false" [height]="'800px'">
-    <igx-column field="Id" header="Id" dataType="number"></igx-column>
-    <igx-column field="Name" header="Name" dataType="string"></igx-column>
-    <igx-column field="Age" header="Age" dataType="number"></igx-column>
-    <igx-column field="BirthDay" header="Birthday" dataType="string"></igx-column>
-    <igx-column field="Street" header="Street" dataType="string"></igx-column>
-    <igx-column field="City" header="City" dataType="string"></igx-column>
-    <igx-column field="Phone" header="Phone" dataType="string"></igx-column>
-    <igx-column field="Country" header="Country" dataType="string"></igx-column>
-    <igx-column field="Language" header="Language" dataType="string"></igx-column>
-    <igx-column field="Sports" header="Sports" dataType="string"></igx-column>
+    <div class="row">
+        <div class="col-md-6">
+            <label igxLabel for="slider">Number of Rows : {{rowsCount}}</label>
+        </div>
 
-</igx-grid>
+        <div class="col-md-4">
+            <div class="button-sample-custom">
+                <button igxButton="raised" igxRipple="white" (click)='rebindgrid()'>Rebind the grid</button>
+            </div>
+        </div>
+
+    </div>
+
+    <br/>
+    <div class="row">
+        <igx-grid #grid1 [autoGenerate]="false" [height]="'800px'">
+            <igx-column width="100px" field="Id" header="Id" dataType="number"></igx-column>
+            <igx-column width="200px" field="Name" header="Name" dataType="string"></igx-column>
+            <igx-column width="100px" field="Age" header="Age" dataType="number"></igx-column>
+            <igx-column width="200px" field="BirthDay" header="Birthday" dataType="string"></igx-column>
+            <igx-column width="200px" field="Street" header="Street" dataType="string"></igx-column>
+            <igx-column width="200px" field="City" header="City" dataType="string"></igx-column>
+            <igx-column width="200px" field="Phone" header="Phone" dataType="string"></igx-column>
+            <igx-column width="200px" field="Country" header="Country" dataType="string"></igx-column>
+            <igx-column width="200px" field="Language" header="Language" dataType="string"></igx-column>
+            <igx-column width="200px" field="Sports" header="Sports" dataType="string"></igx-column>
+
+        </igx-grid>
+    </div>
+</div>

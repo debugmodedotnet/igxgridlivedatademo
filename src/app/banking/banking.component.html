@@ -1,8 +1,10 @@
+
+<div class="container">
 <h2>{{title}}</h2>
 
 <div class="grid__wrapper">
-<igx-grid [width]="'100%'" [data]="bankingaccounts"  height="675" [paging]="true" [perPage]="10" >
-        <igx-column field="AccountName" header="Account name" dataType="string"></igx-column>
+<igx-grid width="1000px"  [data]="bankingaccounts"  height="675" [paging]="true" [perPage]="10" >
+        <igx-column field="AccountName" width="300" header="Account name" dataType="string"></igx-column>
         <igx-column field="Currency" header="Currency" dataType="string"></igx-column>
         <igx-column field="Availability" header="Availability" dataType="number"></igx-column>
         <igx-column field="StartingAmount" header="Starting Amount" dataType="number"></igx-column>
@@ -26,4 +28,6 @@
     </ng-template>
         </igx-column>
 </igx-grid>
+</div>
+
 </div>
