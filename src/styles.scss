@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import "~igniteui-angular/core/styles/themes/index";
+
+@include igx-core();
+@include igx-theme($default-palette);
+/*@include igx-typography($config: (font-family: "Comic Sans MS"));*/
+
+.wrapper {
+  max-width: 100%;
+  padding: 2px 30px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+$bank-account-theme: igx-grid-theme(
+  $header-background: #e0f0fa,
+  $header-text-color: #888,
+  $row-selected-background: #e0f0fa,
+  $cell-selected-background: igx-color($default-palette, primary, 500)
+);
+
+$my-trade-blotter-theme: igx-grid-theme(
+  $header-background: #e0f0fa,
+  $header-text-color: #999
+);
+
+
+$visastock-theme: igx-grid-theme(
+  $header-background: #363636,
+  $content-background: #000,
+  $row-selected-background: #222,
+  $cell-selected-background: #2ab759
+);
+
+.visastock-theme {
+  @include igx-grid($visastock-theme);
+  .igx-icon {
+    i {
+      font-size: 15px;
+      color: igx-color($default-palette, secondary, 500);
+    }
+  }
+}
+
+.trade-blotter-theme,
+.trade-theme{
+  @include igx-grid($bank-account-theme);
+}
+
+.banking-theme {
+  @include igx-grid($bank-account-theme);
+  .igx-icon {
+    i {
+      font-size: 15px
+    }
+  }
+}
+
