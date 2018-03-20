@@ -29,6 +29,11 @@ export class PersonComponent implements OnInit, AfterViewInit {
     this.grid1.markForCheck();
   }
 
+  initcolumn(col) {
+    // disappear scroll bar
+  //  col.width = '100px';
+  }
+
   getPeople(count): PersonEntity[] {
     let p = [];
     for (let i = 0; i < count; i++) {

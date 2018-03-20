@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container"> -->
     <h2>{{title}} </h2>
     <div class="row">
 
@@ -20,19 +20,17 @@
     </div>
 
     <br/>
-    <div class="row">
-        <igx-grid #grid1 [autoGenerate]="false" [height]="'800px'">
-            <igx-column width="100px" field="Id" header="Id" dataType="number"></igx-column>
-            <igx-column width="200px" field="Name" header="Name" dataType="string"></igx-column>
-            <igx-column width="100px" field="Age" header="Age" dataType="number"></igx-column>
-            <igx-column width="200px" field="BirthDay" header="Birthday" dataType="string"></igx-column>
-            <igx-column width="200px" field="Street" header="Street" dataType="string"></igx-column>
-            <igx-column width="200px" field="City" header="City" dataType="string"></igx-column>
-            <igx-column width="200px" field="Phone" header="Phone" dataType="string"></igx-column>
-            <igx-column width="200px" field="Country" header="Country" dataType="string"></igx-column>
-            <igx-column width="200px" field="Language" header="Language" dataType="string"></igx-column>
-            <igx-column width="200px" field="Sports" header="Sports" dataType="string"></igx-column>
-
+        <igx-grid #grid1 [autoGenerate]="false" [height]="'600px'" (onColumnInit)='initcolumn($event)'>
+                <igx-column width="100px" field="Id" header="Id" dataType="number"></igx-column>
+                <igx-column width="200px" field="Name" header="Name" dataType="string"></igx-column>
+                <igx-column width="100px" field="Age" header="Age" dataType="number"></igx-column>
+                <igx-column width="200px" field="BirthDay" header="Birthday" dataType="string"></igx-column>
+                <igx-column width="200px" field="Street" header="Street" dataType="string"></igx-column>
+                <igx-column width="200px" field="City" header="City" dataType="string"></igx-column>
+                <igx-column width="200px" field="Phone" header="Phone" dataType="string"></igx-column>
+                <igx-column width="200px" field="Country" header="Country" dataType="string"></igx-column>
+                <igx-column width="200px" field="Language" header="Language" dataType="string"></igx-column>
+                <igx-column width="200px" field="Sports" header="Sports" dataType="string"></igx-column>
         </igx-grid>
-    </div>
-</div>
+   
+<!-- </div> -->
