@@ -1,16 +1,56 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
 @import "~igniteui-angular/core/styles/themes/index";
 
 @include igx-core();
 @include igx-theme($default-palette);
-/*@include igx-typography($config: (font-family: "Comic Sans MS"));*/
+/*@include igx-typography($config: (font-family: "Roboto"));*/
 
 .wrapper {
   max-width: 100%;
   padding: 2px 30px;
   margin: 0 auto;
   overflow: hidden;
+  background: #fafafa;
+  height: 100%;
+}
+
+.view-title {
+  margin-bottom: 0;
+  padding: 15px 20px;
+  color: igx-color($default-palette, grays, 800);
+  background: #c8e7fb;
+}
+
+.people-config {
+  margin: 15px 0;
+  max-width: 400px;
+}
+
+.wrapper--dark {
+  background: #202020;
+  .view-title {
+    color: #fff;
+    background: #404040;
+  }
+}
+
+.height-vh {
+  height: calc(100vh - 56px);
+}
+
+.cell__flags {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flag {
+  margin-right: 10px;
+}
+
+.igx-grid__td {
+  display: flex;
+  align-items: center;
 }
 
 $bank-account-theme: igx-grid-theme(
@@ -25,7 +65,6 @@ $my-trade-blotter-theme: igx-grid-theme(
   $header-text-color: #999
 );
 
-
 $visastock-theme: igx-grid-theme(
   $header-background: #363636,
   $content-background: #000,
@@ -38,22 +77,67 @@ $visastock-theme: igx-grid-theme(
   .igx-icon {
     i {
       font-size: 15px;
-      color: igx-color($default-palette, secondary, 500);
+      color: igx-color($default-palette, secondary, 600);
     }
+  }
+
+  .igx-button--icon {
+    text-align: center;
+  }
+
+  .igx-grid__td:nth-child(3) {
+    background: #301e2d;
+  }
+
+  .igx-grid__td:nth-child(17) {
+    background: #3baf57;
   }
 }
 
-.trade-blotter-theme,
-.trade-theme{
+.people-theme,
+.trade-theme {
   @include igx-grid($bank-account-theme);
 }
 
 .banking-theme {
   @include igx-grid($bank-account-theme);
-  .igx-icon {
-    i {
-      font-size: 15px
+  .igx-grid__td {
+    .igx-icon {
+      i {
+        font-size: 15px;
+        color: igx-color($default-palette, grays, 500);
+      }
     }
+    &.igx-grid__td--selected {
+      i {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.igx-nav-drawer__item {
+  .igx-icon {
+    margin-right: 20px;
+  }
+}
+
+.igx-paginator {
+  padding: .51rem 0;
+  .igx-button--icon {
+    margin: 0 5px;
+  }
+  .igx-button--icon.igx-button--disabled {
+    background: transparent!important;
+  }
+}
+
+.banking-theme,
+.people-theme,
+.visastock-theme,
+.trade-theme {
+  .igx-grid {
+    box-shadow: none;
   }
 }
 
