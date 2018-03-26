@@ -11,7 +11,11 @@
   margin: 0 auto;
   overflow: hidden;
   background: #fafafa;
-  height: 100%;
+  z-index: 1;
+
+  &:after {
+    background: #fafafa;
+  }
 }
 
 .view-title {
@@ -26,16 +30,26 @@
   max-width: 400px;
 }
 
+.wrapper:after,
+.wrapper--dark:after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 .wrapper--dark {
   background: #202020;
   .view-title {
     color: #fff;
     background: #404040;
   }
-}
-
-.height-vh {
-  height: calc(100vh - 56px);
+  &:after {
+    background: #202020;
+  }
 }
 
 .cell__flags {
@@ -108,12 +122,27 @@ $visastock-theme: igx-grid-theme(
         color: igx-color($default-palette, grays, 500);
       }
     }
+
+    [disabled] {
+      pointer-events: none;
+      i {
+        color: igx-color($default-palette, grays, 300);
+      }
+    }
+
     &.igx-grid__td--selected {
       i {
         color: #fff;
       }
+      [disabled] {
+        pointer-events: none;
+        i {
+          opacity: .6;
+        }
+      }
     }
   }
+
 }
 
 .igx-nav-drawer__item {
@@ -128,7 +157,7 @@ $visastock-theme: igx-grid-theme(
     margin: 0 5px;
   }
   .igx-button--icon.igx-button--disabled {
-    background: transparent!important;
+    background: transparent !important;
   }
 }
 

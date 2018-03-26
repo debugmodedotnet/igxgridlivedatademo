@@ -20,11 +20,9 @@
       </span>
     </ng-template>
   </igx-nav-drawer>
-  <div class="height-vh" igxFlex>
+  <div igxFlex>
     <igx-navbar title="IgniteUI for Angular Grid Sampler" actionButtonIcon="menu" (onAction)="nav.toggle()" igxFlex></igx-navbar>
     <div  igxLayout igxLayoutJustify="center"></div>
-
-      <router-outlet></router-outlet>
-
+    <router-outlet></router-outlet>
   </div>
 </div>
