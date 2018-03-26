@@ -5,28 +5,30 @@
 @include igx-theme($default-palette);
 /*@include igx-typography($config: (font-family: "Roboto"));*/
 
+$wrapper-bg : #fafafa;
+$wrapper-darkt-bg : #202020;
+
 .wrapper {
   max-width: 100%;
-  padding: 2px 30px;
+  padding: rem(3px) rem(30px);
   margin: 0 auto;
   overflow: hidden;
-  background: #fafafa;
+  background: $wrapper-bg;
   z-index: 1;
-
   &:after {
-    background: #fafafa;
+    background: $wrapper-bg;
   }
 }
 
 .view-title {
   margin-bottom: 0;
-  padding: 15px 20px;
+  padding: rem(15px) rem(20px);
   color: igx-color($default-palette, grays, 800);
-  background: #c8e7fb;
+  background: igx-color($default-palette, primary, 100);
 }
 
 .people-config {
-  margin: 15px 0;
+  margin: rem(15px) 0;
   max-width: 400px;
 }
 
@@ -42,13 +44,13 @@
 }
 
 .wrapper--dark {
-  background: #202020;
+  background: $wrapper-darkt-bg;
   .view-title {
     color: #fff;
     background: #404040;
   }
   &:after {
-    background: #202020;
+    background: $wrapper-darkt-bg;
   }
 }
 
@@ -59,7 +61,7 @@
 }
 
 .flag {
-  margin-right: 10px;
+  margin-right: rem(10px);
 }
 
 .igx-grid__td {
@@ -70,8 +72,8 @@
 $bank-account-theme: igx-grid-theme(
   $header-background: #e0f0fa,
   $header-text-color: #888,
-  $row-selected-background: #e0f0fa,
-  $cell-selected-background: igx-color($default-palette, primary, 500)
+  $row-selected-background: igx-color($default-palette, primary, 100),
+  $cell-selected-background: igx-color($default-palette, primary, 400)
 );
 
 $my-trade-blotter-theme: igx-grid-theme(
@@ -119,20 +121,26 @@ $visastock-theme: igx-grid-theme(
     .igx-icon {
       i {
         font-size: 15px;
-        color: igx-color($default-palette, grays, 500);
+        color: igx-color($default-palette, grays, 600);
       }
     }
+
 
     [disabled] {
       pointer-events: none;
       i {
-        color: igx-color($default-palette, grays, 300);
+        color: igx-color($default-palette, grays, 400);
       }
     }
 
     &.igx-grid__td--selected {
-      i {
-        color: #fff;
+      .igx-icon {
+        &:hover {
+          color: #fff;
+        }
+        i {
+          color: #ddd;
+        }
       }
       [disabled] {
         pointer-events: none;
@@ -147,12 +155,12 @@ $visastock-theme: igx-grid-theme(
 
 .igx-nav-drawer__item {
   .igx-icon {
-    margin-right: 20px;
+    margin-right: rem(20px);
   }
 }
 
 .igx-paginator {
-  padding: .51rem 0;
+  padding: rem(5px) 0;
   .igx-button--icon {
     margin: 0 5px;
   }
