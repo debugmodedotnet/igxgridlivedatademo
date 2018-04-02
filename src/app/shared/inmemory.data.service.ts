@@ -3,10 +3,12 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { TradesBlotterEntity } from '../tradesblotter/tradesblotterentity';
 import { VisaStockEntity } from '../visastock/visastockentity';
 import {BankingEntity} from '../banking/bankingentity';
+import {PriceBlotterBondEntity} from '../adapttableblotter/entities/priceblotterbondentity';
 @Injectable()
 export class InMemoryMockDataService implements InMemoryDbService {
 
     createDb() {
+
         const TradesBlotters: TradesBlotterEntity[] = [
             new TradesBlotterEntity(88, 319, 'TGT', 'US Bancrop', '10,000,000',
                                     'RBS', 'ZAR', 'Thaliland', 32.2945, 26.5582,
@@ -134,7 +136,55 @@ export class InMemoryMockDataService implements InMemoryDbService {
             new BankingEntity('SavingAccount', 'BG10FINV91501003939179', 'EUR', 228.65, 228.65, 228.65)
         ];
 
+        const PriceBlotterBondEntites:  PriceBlotterBondEntity[] = [
+            new PriceBlotterBondEntity('US035198AA89',
+             'ANGOLA (3) 9.5 12Nov25',
+             'Goverment',
+             0.9796, 0.2, 0.8796, 1.072,
+             'ARGENT', 0.0525, 'USD', 'SNRFOR',
+             4, 0.038737174,
+             'BB',
+             'Argentina',
+             'P8055KWB7'),
+             new PriceBlotterBondEntity('USP04808AD61',
+             'ARGENT (2) 7.5 22Apr26',
+             'Goverment',
+             1.015, 0.3, 0.865, 1.165,
+             'ARGENT', 0.0635, 'USD', 'SNRFOR',
+             2, 0.05512521,
+             'NR',
+             'Argentina',
+             ''),
+             new PriceBlotterBondEntity('USP04808AC88',
+             'ARGENT (3) 7.5 22Apr26',
+             'Goverment',
+             1.0165, 0.3, 0.8665, 1.1665,
+             'ARGENT', 0.031, 'USD', 'SNRFOR',
+             3, 0.054965897,
+             'BB',
+             'Argentina',
+             ''),
+             new PriceBlotterBondEntity('US040114GT18',
+             'ARGENT (4) 7.5 22Apr26',
+             'Goverment',
+             1.0235, 0.2, 0.9235, 1.1235,
+             'ARGENT', 0.0385, 'USD', 'SNRFOR',
+             3, 0.054222434,
+             'BB',
+             'Argentina',
+             '040114GT1'),
+             new PriceBlotterBondEntity('USP04808AB06',
+             'ARGENT (5) 6.875 22Apr21',
+             'Goverment',
+             1.0345, 0.3, 0.8845, 1.1845,
+             'ARGENT', 0.0725, 'USD', 'SNRFOR',
+             3, 0.048142673,
+             'BB',
+             'Argentina',
+             '040114GT1'),
+        ];
+
         return { 'tradesblotters': TradesBlotters, 'visastocks': VisaStockEntities,
-                'bankingentities': BankingEntities  };
+                'bankingentities': BankingEntities, 'Priceblotterbondentites' : PriceBlotterBondEntites};
     }
 }

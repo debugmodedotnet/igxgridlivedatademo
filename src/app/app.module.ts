@@ -30,9 +30,16 @@ import {InMemoryMockDataService} from './shared/inmemory.data.service';
 import {PersonComponent} from './people/person.component';
 import {VisaStockrService} from './visastock/visastock.service';
 import {BankingService} from './banking/banking.service';
+import {AdaptTableService} from './adapttableblotter/adapttableblotter.service';
+import {AdaptTableBlotterComponent} from './adapttableblotter/adapttableblotter.component';
+import {TradeBlotterBondComponent} from './adapttableblotter/tradeblotterbond.component';
+import {PriceBlotterComponent} from './adapttableblotter/priceblotterbond.component';
 @NgModule({
   declarations: [
-    AppComponent, AboutComponent, PersonComponent, BankingComponent, VisaStockComponent, TradesBolotterComponent
+    AppComponent, AboutComponent,
+     PersonComponent,
+     AdaptTableBlotterComponent, PriceBlotterComponent, TradeBlotterBondComponent,
+      BankingComponent, VisaStockComponent, TradesBolotterComponent
   ],
   imports: [
     BrowserModule,
@@ -49,10 +56,11 @@ import {BankingService} from './banking/banking.service';
     IgxGridModule.forRoot(),
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryMockDataService, { dataEncapsulation: false }
+      InMemoryMockDataService, { dataEncapsulation: false , passThruUnknownUrl: true }
     )
   ],
-  providers: [TradesBlotterService, VisaStockrService , BankingService],
-  bootstrap: [AppComponent]
+  providers: [TradesBlotterService, VisaStockrService , BankingService , AdaptTableService],
+  bootstrap: [AppComponent],
+  entryComponents: [TradeBlotterBondComponent, PriceBlotterComponent]
 })
 export class AppModule { }
