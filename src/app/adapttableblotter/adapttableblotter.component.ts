@@ -28,9 +28,13 @@ export class AdaptTableBlotterComponent implements OnInit {
       const componentRef = this.entry.createComponent(factory);
 
     }
-    // changeDs(ds) {
-    //     console.log(this.selectedDataSource.Title);
-    // }
+    changeDs(ds) {
+        console.log(this.selectedDataSource.Title);
+        this.changeDataSource();
+    }
+
+
+    
 
     changeDataSource() {
         if (this.selectedDataSource.Id === '1') {

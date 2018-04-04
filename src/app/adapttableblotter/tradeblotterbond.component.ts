@@ -10,13 +10,16 @@ import {TradeBlotterBondEntity} from '../adapttableblotter/entities/tradeblotter
 export class TradeBlotterBondComponent implements OnInit {
 
     title = 'Trade Blotter Bond';
+    rows: number;
+    columns: number;
     tradeblotterbondentities: TradeBlotterBondEntity[] = [];
     constructor(private bankingservice: AdaptTableService) { }
 
     ngOnInit() {
        this.bankingservice.getTradeBlotterBond().subscribe(t => {
          this.tradeblotterbondentities = t;
-         console.log(this.tradeblotterbondentities);
+         this.rows = this.tradeblotterbondentities.length;
+         this.columns = Object.keys(this.tradeblotterbondentities[0]).length;
         });
     }
 }

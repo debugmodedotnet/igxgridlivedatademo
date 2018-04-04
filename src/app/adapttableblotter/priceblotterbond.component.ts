@@ -10,13 +10,17 @@ import {PriceBlotterBondEntity} from '../adapttableblotter/entities/priceblotter
 export class PriceBlotterComponent implements OnInit {
 
     title = 'Price Blotter';
+    rows: number;
+    columns: number;
     priceblotterentities: PriceBlotterBondEntity[] = [];
     constructor(private bankingservice: AdaptTableService) { }
 
     ngOnInit() {
        this.bankingservice.getPriceBlotters().subscribe(t => {
          this.priceblotterentities = t;
-         console.log(this.priceblotterentities);
+         this.rows = this.priceblotterentities.length;
+        this.columns = Object.keys(this.priceblotterentities[0]).length;
+        // this.priceblotterentities.count
         });
     }
 }

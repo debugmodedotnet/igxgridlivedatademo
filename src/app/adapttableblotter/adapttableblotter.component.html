@@ -5,10 +5,10 @@
 
 <br/>
 
-<select [(ngModel)]="selectedDataSource">
+<select [(ngModel)]="selectedDataSource" (change)='changeDs()'>
     <option *ngFor="let d of AdapttableBlotterDataSoureOptions" [ngValue]="d">{{d.Title}}</option>
 </select>
-<button (click)='changeDataSource()'>Regenerate Ignite UI Grid</button>
+<!-- <button (click)='changeDataSource()'>Regenerate Ignite UI Grid</button> -->
 
 <br/>
 
