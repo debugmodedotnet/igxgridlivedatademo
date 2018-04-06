@@ -34,12 +34,16 @@ import {AdaptTableService} from './adapttableblotter/adapttableblotter.service';
 import {AdaptTableBlotterComponent} from './adapttableblotter/adapttableblotter.component';
 import {TradeBlotterBondComponent} from './adapttableblotter/tradeblotterbond.component';
 import {PriceBlotterComponent} from './adapttableblotter/priceblotterbond.component';
+import {ContactsComponent} from './adapttableblotter/contacts.component';
+import {FTSECloseComponent} from './adapttableblotter/ftseclose.component';
+import {NorthWindOrdersComponent} from './adapttableblotter/northwindorders.component';
+
 @NgModule({
   declarations: [
     AppComponent, AboutComponent,
      PersonComponent,
      AdaptTableBlotterComponent, PriceBlotterComponent, TradeBlotterBondComponent,
-      BankingComponent, VisaStockComponent, TradesBolotterComponent
+      BankingComponent, NorthWindOrdersComponent, FTSECloseComponent, VisaStockComponent, ContactsComponent, TradesBolotterComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +65,6 @@ import {PriceBlotterComponent} from './adapttableblotter/priceblotterbond.compon
   ],
   providers: [TradesBlotterService, VisaStockrService , BankingService , AdaptTableService],
   bootstrap: [AppComponent],
-  entryComponents: [TradeBlotterBondComponent, PriceBlotterComponent]
+  entryComponents: [TradeBlotterBondComponent, NorthWindOrdersComponent, FTSECloseComponent, PriceBlotterComponent, ContactsComponent]
 })
 export class AppModule { }

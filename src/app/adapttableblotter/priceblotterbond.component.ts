@@ -19,7 +19,7 @@ export class PriceBlotterComponent implements OnInit {
        this.bankingservice.getPriceBlotters().subscribe(t => {
          this.priceblotterentities = t;
          this.rows = this.priceblotterentities.length;
-        this.columns = Object.keys(this.priceblotterentities[0]).length;
+         this.columns = Object.keys(this.priceblotterentities[0]).length;
         // this.priceblotterentities.count
         });
     }

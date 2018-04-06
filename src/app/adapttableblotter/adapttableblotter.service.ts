@@ -6,11 +6,18 @@ import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/map';
 import {PriceBlotterBondEntity} from '../adapttableblotter/entities/priceblotterbondentity';
 import {TradeBlotterBondEntity} from '../adapttableblotter/entities/tradeblotterbondentity';
+import {ContactEntity} from '../adapttableblotter/entities/contactentity';
+import {FTSECloseEntity} from '../adapttableblotter/entities/ftsecloseentity';
+import {NorthwindOrdersEntity} from '../adapttableblotter/entities/northwindordersentity';
+
 @Injectable()
 export class AdaptTableService {
 
     private tradesblottersapiurl = './assets/priceblotterbond.json';
     private tradeblotterbondapiurl = './assets/tradeblotterbond.json';
+    private contactsapiurl = './assets/contacts.json';
+    private ftsecloseapiurl = './assets/ftseclose.json';
+    private northwindsorderspiurl = './assets/northwindorders.json';
     constructor(private http: HttpClient) { }
 
     getPriceBlotters (): Observable<PriceBlotterBondEntity[]> {
@@ -20,6 +27,17 @@ export class AdaptTableService {
       getTradeBlotterBond (): Observable<TradeBlotterBondEntity[]> {
         return this.http.get<TradeBlotterBondEntity[]>(this.tradeblotterbondapiurl);
       }
+      getftseclose (): Observable<FTSECloseEntity[]> {
+        return this.http.get<FTSECloseEntity[]>(this.ftsecloseapiurl);
+      }
+
+      getContacts (): Observable<ContactEntity[]> {
+        return this.http.get<ContactEntity[]>(this.contactsapiurl);
+      }
+      getNorthwindorders (): Observable<NorthwindOrdersEntity[]> {
+        return this.http.get<NorthwindOrdersEntity[]>(this.northwindsorderspiurl);
+      }
+
 
     // getPriceBlotters () {
     //     return this.http.get(this.tradesblottersapiurl).map( (response: Response) => {

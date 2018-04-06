@@ -7,6 +7,9 @@ import {AdaptTableService} from '../adapttableblotter/adapttableblotter.service'
 import {AdaptableBlotterDsEntity} from '../adapttableblotter/entities/adaptableblotterdsentity';
 import {PriceBlotterComponent} from '../adapttableblotter/priceblotterbond.component';
 import {TradeBlotterBondComponent} from '../adapttableblotter/tradeblotterbond.component';
+import {ContactsComponent} from '../adapttableblotter/contacts.component';
+import {FTSECloseComponent} from '../adapttableblotter/ftseclose.component';
+import {NorthWindOrdersComponent} from '../adapttableblotter/northwindorders.component';
 @Component({
     selector: 'app-adapttableblotter',
     templateUrl: './adapttableblotter.component.html'
@@ -33,9 +36,6 @@ export class AdaptTableBlotterComponent implements OnInit {
         this.changeDataSource();
     }
 
-
-    
-
     changeDataSource() {
         if (this.selectedDataSource.Id === '1') {
             console.log(' 1') ;
@@ -49,6 +49,18 @@ export class AdaptTableBlotterComponent implements OnInit {
             this.entry.clear();
             const factory = this.resolver.resolveComponentFactory(TradeBlotterBondComponent);
             const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '3') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(ContactsComponent);
+            const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '4') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(FTSECloseComponent);
+            const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '5') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(NorthWindOrdersComponent);
+            const componentRef = this.entry.createComponent(factory);
           }
 
     }
@@ -57,6 +69,9 @@ export class AdaptTableBlotterComponent implements OnInit {
         return [
             new AdaptableBlotterDsEntity('1', 'Price Blotter Bond'),
             new AdaptableBlotterDsEntity('2', 'Trade Blotter Bond'),
+            new AdaptableBlotterDsEntity('3', 'Contacts'),
+            new AdaptableBlotterDsEntity('4', 'FTSE Close'),
+            new AdaptableBlotterDsEntity('5', 'NorthWind Orders'),
         ];
     }
 }

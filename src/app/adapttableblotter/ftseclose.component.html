@@ -1,0 +1,15 @@
+<h2>{{title}} </h2>
+<h3>Rows : {{rows}} Columns :{{columns}}</h3>
+<igx-grid #grid1 id="grid1" [data]="ftsecloseentities" [height]="'600px'" [autoGenerate]="false">
+    <igx-column width="90px" field="CloseDate" header="Close Date" dataType="string"></igx-column>
+    <igx-column width="190px" field="Open" header="Open" dataType="number"></igx-column>
+    <igx-column width="200px" field="High" header="High" dataType="number"></igx-column>
+    <igx-column width="90px" field="Low" header="Low" dataType="number"></igx-column>
+    <igx-column width="200px" field="Close" header="Close" dataType="number"></igx-column>
+    <igx-column width="90px" field="HighLowDifference" header="High Low Difference" dataType="number"></igx-column>
+    <igx-column width="90px" field="DaySpread" header="Day Spread" dataType="number"></igx-column>
+    <igx-column width="90px" field="Volume" header="Volume" dataType="number"></igx-column>
+    <igx-column width="90px" field="AdjustedClose" header="AdjustedClose" dataType="number"></igx-column>
+    <igx-column width="90px" field="PercentChange" header="Percent Change" dataType="number"></igx-column>     
+</igx-grid>
+
