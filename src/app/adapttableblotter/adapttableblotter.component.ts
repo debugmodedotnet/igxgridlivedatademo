@@ -11,6 +11,7 @@ import {ContactsComponent} from '../adapttableblotter/contacts.component';
 import {FTSECloseComponent} from '../adapttableblotter/ftseclose.component';
 import {NorthWindOrdersComponent} from '../adapttableblotter/northwindorders.component';
 import {PriceBlotterCDSIndexComponent} from '../adapttableblotter/priceblottercdsindex.component';
+import {PriceBlotterCommodityComponent} from '../adapttableblotter/priceblottercommodity.component';
 @Component({
     selector: 'app-adapttableblotter',
     templateUrl: './adapttableblotter.component.html'
@@ -62,6 +63,10 @@ export class AdaptTableBlotterComponent implements OnInit {
             const componentRef = this.entry.createComponent(factory);
           } else if (this.selectedDataSource.Id === '6') {
             this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(PriceBlotterCommodityComponent);
+            const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '7') {
+            this.entry.clear();
             const factory = this.resolver.resolveComponentFactory(TradeBlotterBondComponent);
             const componentRef = this.entry.createComponent(factory);
           }
@@ -84,7 +89,8 @@ export class AdaptTableBlotterComponent implements OnInit {
             new AdaptableBlotterDsEntity('3', 'NorthWind Orders'),
             new AdaptableBlotterDsEntity('4', 'Price Blotter Bond'),
             new AdaptableBlotterDsEntity('5', 'Price Blotter CDSIndex'),
-            new AdaptableBlotterDsEntity('6', 'Trade Blotter Bond')
+            new AdaptableBlotterDsEntity('6', 'Price Blotter Commodity'),
+            new AdaptableBlotterDsEntity('7', 'Trade Blotter Bond')
         ];
     }
 }
