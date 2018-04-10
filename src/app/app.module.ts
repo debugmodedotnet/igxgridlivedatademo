@@ -37,13 +37,16 @@ import {PriceBlotterComponent} from './adapttableblotter/priceblotterbond.compon
 import {ContactsComponent} from './adapttableblotter/contacts.component';
 import {FTSECloseComponent} from './adapttableblotter/ftseclose.component';
 import {NorthWindOrdersComponent} from './adapttableblotter/northwindorders.component';
+import {PriceBlotterCDSIndexComponent} from './adapttableblotter/priceblottercdsindex.component';
+
 
 @NgModule({
   declarations: [
     AppComponent, AboutComponent,
      PersonComponent,
      AdaptTableBlotterComponent, PriceBlotterComponent, TradeBlotterBondComponent,
-      BankingComponent, NorthWindOrdersComponent, FTSECloseComponent, VisaStockComponent, ContactsComponent, TradesBolotterComponent
+      BankingComponent, NorthWindOrdersComponent,
+      PriceBlotterCDSIndexComponent ,  FTSECloseComponent, VisaStockComponent, ContactsComponent, TradesBolotterComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ import {NorthWindOrdersComponent} from './adapttableblotter/northwindorders.comp
   ],
   providers: [TradesBlotterService, VisaStockrService , BankingService , AdaptTableService],
   bootstrap: [AppComponent],
-  entryComponents: [TradeBlotterBondComponent, NorthWindOrdersComponent, FTSECloseComponent, PriceBlotterComponent, ContactsComponent]
+  entryComponents: [TradeBlotterBondComponent,
+    PriceBlotterCDSIndexComponent,  NorthWindOrdersComponent, FTSECloseComponent, PriceBlotterComponent, ContactsComponent]
 })
 export class AppModule { }

@@ -10,6 +10,7 @@ import {TradeBlotterBondComponent} from '../adapttableblotter/tradeblotterbond.c
 import {ContactsComponent} from '../adapttableblotter/contacts.component';
 import {FTSECloseComponent} from '../adapttableblotter/ftseclose.component';
 import {NorthWindOrdersComponent} from '../adapttableblotter/northwindorders.component';
+import {PriceBlotterCDSIndexComponent} from '../adapttableblotter/priceblottercdsindex.component';
 @Component({
     selector: 'app-adapttableblotter',
     templateUrl: './adapttableblotter.component.html'
@@ -38,40 +39,52 @@ export class AdaptTableBlotterComponent implements OnInit {
 
     changeDataSource() {
         if (this.selectedDataSource.Id === '1') {
-            console.log(' 1') ;
             this.entry.clear();
-            const factory = this.resolver.resolveComponentFactory(PriceBlotterComponent);
+            const factory = this.resolver.resolveComponentFactory(ContactsComponent);
             const componentRef = this.entry.createComponent(factory);
             //componentRef.instance.message = message;
 
         } else if (this.selectedDataSource.Id === '2') {
-            console.log('2') ;
-            this.entry.clear();
-            const factory = this.resolver.resolveComponentFactory(TradeBlotterBondComponent);
-            const componentRef = this.entry.createComponent(factory);
-          } else if (this.selectedDataSource.Id === '3') {
-            this.entry.clear();
-            const factory = this.resolver.resolveComponentFactory(ContactsComponent);
-            const componentRef = this.entry.createComponent(factory);
-          } else if (this.selectedDataSource.Id === '4') {
             this.entry.clear();
             const factory = this.resolver.resolveComponentFactory(FTSECloseComponent);
             const componentRef = this.entry.createComponent(factory);
-          } else if (this.selectedDataSource.Id === '5') {
+          } else if (this.selectedDataSource.Id === '3') {
             this.entry.clear();
             const factory = this.resolver.resolveComponentFactory(NorthWindOrdersComponent);
+            const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '4') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(PriceBlotterComponent);
+            const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '5') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(PriceBlotterCDSIndexComponent);
+            const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '6') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(TradeBlotterBondComponent);
             const componentRef = this.entry.createComponent(factory);
           }
 
     }
 
+    // getAdaptTableDs() {
+    //     return [
+    //         new AdaptableBlotterDsEntity('1', 'Price Blotter Bond'),
+    //         new AdaptableBlotterDsEntity('2', 'Trade Blotter Bond'),
+    //         new AdaptableBlotterDsEntity('3', 'Contacts'),
+    //         new AdaptableBlotterDsEntity('4', 'FTSE Close'),
+    //         new AdaptableBlotterDsEntity('5', 'NorthWind Orders'),
+    //     ];
+    // }
     getAdaptTableDs() {
         return [
-            new AdaptableBlotterDsEntity('1', 'Price Blotter Bond'),
-            new AdaptableBlotterDsEntity('2', 'Trade Blotter Bond'),
-            new AdaptableBlotterDsEntity('3', 'Contacts'),
-            new AdaptableBlotterDsEntity('4', 'FTSE Close'),
-            new AdaptableBlotterDsEntity('5', 'NorthWind Orders'),
+            new AdaptableBlotterDsEntity('1', 'Contacts'),
+            new AdaptableBlotterDsEntity('2', 'FTSE Close'),
+            new AdaptableBlotterDsEntity('3', 'NorthWind Orders'),
+            new AdaptableBlotterDsEntity('4', 'Price Blotter Bond'),
+            new AdaptableBlotterDsEntity('5', 'Price Blotter CDSIndex'),
+            new AdaptableBlotterDsEntity('6', 'Trade Blotter Bond')
         ];
     }
 }

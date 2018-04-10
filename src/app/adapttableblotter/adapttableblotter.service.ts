@@ -9,7 +9,7 @@ import {TradeBlotterBondEntity} from '../adapttableblotter/entities/tradeblotter
 import {ContactEntity} from '../adapttableblotter/entities/contactentity';
 import {FTSECloseEntity} from '../adapttableblotter/entities/ftsecloseentity';
 import {NorthwindOrdersEntity} from '../adapttableblotter/entities/northwindordersentity';
-
+import {PriceBlotterCDSIndexEntity} from '../adapttableblotter/entities/priceblottercdsindexentity';
 @Injectable()
 export class AdaptTableService {
 
@@ -18,10 +18,15 @@ export class AdaptTableService {
     private contactsapiurl = './assets/contacts.json';
     private ftsecloseapiurl = './assets/ftseclose.json';
     private northwindsorderspiurl = './assets/northwindorders.json';
+    private priceblottercdsindexapiurl = './assets/priceblottercdsindex.json';
     constructor(private http: HttpClient) { }
 
     getPriceBlotters (): Observable<PriceBlotterBondEntity[]> {
         return this.http.get<PriceBlotterBondEntity[]>(this.tradesblottersapiurl);
+      }
+
+      getPriceBlottercdsIndex (): Observable<PriceBlotterCDSIndexEntity[]> {
+        return this.http.get<PriceBlotterCDSIndexEntity[]>(this.priceblottercdsindexapiurl);
       }
 
       getTradeBlotterBond (): Observable<TradeBlotterBondEntity[]> {
