@@ -19,6 +19,15 @@
   padding: 15px 20px;
   color: igx-color($default-palette, grays, 800);
   background: #c8e7fb;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-title__samll {
+  font-size: 14px;
+  color: igx-color($default-palette, grays, 500);
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .people-config {
@@ -94,6 +103,11 @@ $visastock-theme: igx-grid-theme(
   }
 }
 
+.northwindorders-theme,
+.tradeblotterbond-theme,
+.priceblotterbond-theme,
+.ftseclose-theme,
+.contacts-theme,
 .people-theme,
 .trade-theme {
   @include igx-grid($bank-account-theme);
@@ -132,12 +146,50 @@ $visastock-theme: igx-grid-theme(
   }
 }
 
+.ftseclose-theme,
+.priceblotterbond-theme,
+.northwindorders-theme,
+.tradeblotterbond-theme,
+.contacts-theme,
 .banking-theme,
 .people-theme,
 .visastock-theme,
 .trade-theme {
   .igx-grid {
     box-shadow: none;
+  }
+}
+
+.native-dd {
+  tab-index: 0;
+  display: inline-block;
+  position: relative;
+  background: #fff;
+  margin-top: 30px;
+  igx-icon {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 11px)
+  }
+}
+
+
+
+::-moz-focus-inner {border:0;}
+
+.native-dd__select {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 3px 40px 3px 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  &:focus {
+    background:rgba(192,240,250, .1);
+    outline: 0;
   }
 }
 

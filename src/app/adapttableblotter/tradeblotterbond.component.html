@@ -1,6 +1,10 @@
-<h2>{{title}}</h2>
-<h3>Rows : {{rows}} Columns :{{columns}}</h3>
-<igx-grid #grid1 id="grid1" [data]="tradeblotterbondentities" [height]="'600px'" [autoGenerate]="false">
+<h2 class="view-title">
+  <span>{{title}}</span>
+  <small class="view-title__samll">Rows : {{rows}} Columns :{{columns}}</small>
+</h2>
+
+<div class="tradeblotterbond-theme">
+  <igx-grid #grid1 id="grid1" [data]="tradeblotterbondentities" [height]="'600px'" [autoGenerate]="false">
     <igx-column width="90px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
     <igx-column width="190px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
     <igx-column width="200px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
@@ -18,6 +22,7 @@
     <igx-column width="90px" field="Cusip" header="Cusip" dataType="string"></igx-column>
     <igx-column width="90px" field="Trader" header="Trader" dataType="string"></igx-column>
     <igx-column width="90px" field="Status" header="Status" dataType="string"></igx-column>
-    
-            
-</igx-grid>
+  </igx-grid>
+</div>
+
+

@@ -1,6 +1,10 @@
-<h2>{{title}} </h2>
-<h3>Rows : {{rows}} Columns :{{columns}}</h3>
-<igx-grid #grid1 id="grid1" [data]="contactentities" [height]="'600px'" [autoGenerate]="false">
+<h2 class="view-title">
+  <span>{{title}}</span>
+  <small class="view-title__samll">Rows : {{rows}} Columns :{{columns}}</small>
+</h2>
+
+<div class="contacts-theme">
+  <igx-grid #grid1 id="grid1" [data]="contactentities" [height]="'600px'" [autoGenerate]="false">
     <igx-column width="90px" field="Id" header="Id" dataType="string"></igx-column>
     <igx-column width="220px" field="FirstName" header="First Name" dataType="string"></igx-column>
     <igx-column width="220px" field="LastName" header="Last Name" dataType="string"></igx-column>
@@ -15,7 +19,6 @@
     <igx-column width="120px" field="Phone2" header="Phone2" dataType="string"></igx-column>
     <igx-column width="220px" field="Email" header="Email" dataType="string"></igx-column>
     <igx-column width="250px" field="Web" header="Web" dataType="string"></igx-column>
+  </igx-grid>
+</div>
 
-   
-            
-</igx-grid>
