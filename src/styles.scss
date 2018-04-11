@@ -107,8 +107,10 @@ $visastock-theme: igx-grid-theme(
 .tradeblotterbond-theme,
 .priceblotterbond-theme,
 .ftseclose-theme,
+.priceblottercdxindex-theme,
 .contacts-theme,
 .people-theme,
+.priceblottercommodity-theme,
 .trade-theme {
   @include igx-grid($bank-account-theme);
 }
@@ -151,6 +153,8 @@ $visastock-theme: igx-grid-theme(
 .northwindorders-theme,
 .tradeblotterbond-theme,
 .contacts-theme,
+.priceblottercdxindex-theme,
+.priceblottercommodity-theme,
 .banking-theme,
 .people-theme,
 .visastock-theme,
