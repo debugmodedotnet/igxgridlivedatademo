@@ -40,10 +40,6 @@ export class SharePlaceComponent implements OnInit {
     @ViewChild('selectedColumn') selectedColumn: IgxColumnComponent;
     @ViewChild('checkbox') checkbox: TemplateRef<any>;
 
-    ngAfterViewInit() {
-        this.selectedColumn.bodyTemplate = this.checkbox;
-    }
-
     onCellSelected(cell: IgxGridCellComponent) {
         cell.row.rowData.Selected = !cell.row.rowData.Selected;
     }
