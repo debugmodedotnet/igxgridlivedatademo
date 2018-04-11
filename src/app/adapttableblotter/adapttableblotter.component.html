@@ -1,0 +1,16 @@
+
+<!-- <select [(ngModel)]="selectedDataSource" name="d" (change)="changeDs($event.target.value)">
+    <option *ngFor="let d of AdapttableBlotterDataSoureOptions" [ngValue]="d">{{d.Title}}</option>
+</select> -->
+
+<br/>
+
+<select [(ngModel)]="selectedDataSource" (change)='changeDs()'>
+    <option *ngFor="let d of AdapttableBlotterDataSoureOptions" [ngValue]="d">{{d.Title}}</option>
+</select>
+<!-- <button (click)='changeDataSource()'>Regenerate Ignite UI Grid</button> -->
+
+<br/>
+
+<template #gridcontainer>
+</template>
