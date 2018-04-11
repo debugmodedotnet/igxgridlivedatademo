@@ -15,7 +15,7 @@ export const routes: Routes = [
     { path: 'adapattableblotter', component: AdaptTableBlotterComponent, data: { text: 'Adapt Table Blotter', icon: 'monetization_on' } },
     { path: 'banking', component: BankingComponent, data: { text: 'Banking Accounts', icon: 'monetization_on' } },
     { path: 'trade', component: TradesBolotterComponent, data: { text: 'Trade Blotter', icon: 'insert_chart' } },
-    { path: 'sharePlace', component: SharePlaceComponent, data: { text: 'Share Place', icon: 'info' } },
+    { path: 'sharePlace', component: SharePlaceComponent, data: { text: 'Share Place', icon: 'share' } },
     { path: 'about', component: AboutComponent, data: { text: 'About', icon: 'info' } }
 
 ];
