@@ -1,6 +1,10 @@
-<h2>{{title}} </h2>
-<h3>Rows : {{rows}} Columns :{{columns}}</h3>
-<igx-grid #grid1 id="grid1" [data]="northwindordersentities" [height]="'600px'" [autoGenerate]="false">
+<h2 class="view-title">
+  <span>{{title}}</span>
+  <small class="view-title__samll">Rows : {{rows}} Columns :{{columns}}</small>
+</h2>
+
+<div class="northwindorders-theme">
+  <igx-grid #grid1 id="grid1" [data]="northwindordersentities" [height]="'600px'" [autoGenerate]="false">
     <igx-column width="90px" field="OrderId" header="Order Id" dataType="string"></igx-column>
     <igx-column width="190px" field="CustomerReference" header="Customer Reference" dataType="string"></igx-column>
     <igx-column width="200px" field="CompanyName" header="Company Name" dataType="string"></igx-column>
@@ -18,7 +22,6 @@
     <igx-column width="180px" field="ShipRegion" header="Ship Region" dataType="string"></igx-column>
     <igx-column width="150px" field="ShipPostalCode" header="Ship Postal Code" dataType="number"></igx-column>
     <igx-column width="150px" field="ShipCountry" header="Ship Country" dataType="string"></igx-column>
+  </igx-grid>
+</div>
 
-    
-            
-</igx-grid>
