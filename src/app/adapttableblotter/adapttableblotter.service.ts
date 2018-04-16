@@ -11,6 +11,8 @@ import {FTSECloseEntity} from '../adapttableblotter/entities/ftsecloseentity';
 import {NorthwindOrdersEntity} from '../adapttableblotter/entities/northwindordersentity';
 import {PriceBlotterCDSIndexEntity} from '../adapttableblotter/entities/priceblottercdsindexentity';
 import {PriceBlotterCommodityEntity} from '../adapttableblotter/entities/priceblottercommodityentity';
+import {PriceBlotterFxEntity} from '../adapttableblotter/entities/priceblotterfxentity';
+import {TradeBlotterCDSEntity} from '../adapttableblotter/entities/tradeblottercdsentity';
 @Injectable()
 export class AdaptTableService {
 
@@ -21,6 +23,8 @@ export class AdaptTableService {
     private northwindsorderspiurl = './assets/northwindorders.json';
     private priceblottercdsindexapiurl = './assets/priceblottercdsindex.json';
     private priceblottercommodityapiurl = './assets/priceblottercommodity.json';
+    private priceblotterfxapiurl = './assets/priceblotterfx.json';
+    private tradeblottercdsapiurl = './assets/tradeblottercds.json';
 
     constructor(private http: HttpClient) { }
 
@@ -32,11 +36,17 @@ export class AdaptTableService {
         return this.http.get<PriceBlotterCDSIndexEntity[]>(this.priceblottercdsindexapiurl);
       }
 
+      getPriceBlotterFx (): Observable<PriceBlotterFxEntity[]> {
+        return this.http.get<PriceBlotterFxEntity[]>(this.priceblotterfxapiurl);
+      }
       getPriceBlotterCommodity (): Observable<PriceBlotterCommodityEntity[]> {
         return this.http.get<PriceBlotterCommodityEntity[]>(this.priceblottercommodityapiurl);
       }
       getTradeBlotterBond (): Observable<TradeBlotterBondEntity[]> {
         return this.http.get<TradeBlotterBondEntity[]>(this.tradeblotterbondapiurl);
+      }
+      getTradeBlotterCDS (): Observable<TradeBlotterCDSEntity[]> {
+        return this.http.get<TradeBlotterCDSEntity[]>(this.tradeblottercdsapiurl);
       }
       getftseclose (): Observable<FTSECloseEntity[]> {
         return this.http.get<FTSECloseEntity[]>(this.ftsecloseapiurl);

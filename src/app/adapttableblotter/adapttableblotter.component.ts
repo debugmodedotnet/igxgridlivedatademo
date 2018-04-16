@@ -12,6 +12,8 @@ import {FTSECloseComponent} from '../adapttableblotter/ftseclose.component';
 import {NorthWindOrdersComponent} from '../adapttableblotter/northwindorders.component';
 import {PriceBlotterCDSIndexComponent} from '../adapttableblotter/priceblottercdsindex.component';
 import {PriceBlotterCommodityComponent} from '../adapttableblotter/priceblottercommodity.component';
+import { PriceBlotterFxComponent } from '../adapttableblotter/priceblotterfx.component';
+import { TradeBlotterCDSComponent } from '../adapttableblotter/tradeblottercds.component';
 @Component({
     selector: 'app-adapttableblotter',
     templateUrl: './adapttableblotter.component.html'
@@ -67,9 +69,18 @@ export class AdaptTableBlotterComponent implements OnInit {
             const componentRef = this.entry.createComponent(factory);
           } else if (this.selectedDataSource.Id === '7') {
             this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(PriceBlotterFxComponent);
+            const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '8') {
+            this.entry.clear();
             const factory = this.resolver.resolveComponentFactory(TradeBlotterBondComponent);
             const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '9') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(TradeBlotterCDSComponent);
+            const componentRef = this.entry.createComponent(factory);
           }
+
 
     }
 
@@ -90,7 +101,9 @@ export class AdaptTableBlotterComponent implements OnInit {
             new AdaptableBlotterDsEntity('4', 'Price Blotter Bond'),
             new AdaptableBlotterDsEntity('5', 'Price Blotter CDSIndex'),
             new AdaptableBlotterDsEntity('6', 'Price Blotter Commodity'),
-            new AdaptableBlotterDsEntity('7', 'Trade Blotter Bond')
+            new AdaptableBlotterDsEntity('7', 'Price Blotter FX'),
+            new AdaptableBlotterDsEntity('8', 'Trade Blotter Bond'),
+            new AdaptableBlotterDsEntity('9', 'Trade Blotter CDS')
         ];
     }
 }

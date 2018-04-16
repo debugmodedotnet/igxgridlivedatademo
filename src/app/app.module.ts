@@ -40,8 +40,12 @@ import { FTSECloseComponent } from './adapttableblotter/ftseclose.component';
 import { NorthWindOrdersComponent } from './adapttableblotter/northwindorders.component';
 import { PriceBlotterCDSIndexComponent } from './adapttableblotter/priceblottercdsindex.component';
 import { PriceBlotterCommodityComponent } from './adapttableblotter/priceblottercommodity.component';
-import { SharePlaceService } from "./shareplace/shareplace.service";
-import { SharePlaceComponent } from "./shareplace/shareplace.component";
+import { SharePlaceService } from './shareplace/shareplace.service';
+import { SharePlaceComponent } from './shareplace/shareplace.component';
+import { PriceBlotterFxComponent } from './adapttableblotter/priceblotterfx.component';
+import { TradeBlotterCDSComponent } from './adapttableblotter/tradeblottercds.component';
+
+
 
 @NgModule({
     declarations: [
@@ -59,7 +63,9 @@ import { SharePlaceComponent } from "./shareplace/shareplace.component";
         VisaStockComponent,
         ContactsComponent,
         TradesBolotterComponent,
-        SharePlaceComponent
+        SharePlaceComponent,
+        PriceBlotterFxComponent,
+        TradeBlotterCDSComponent
     ],
     imports: [
         BrowserModule,
@@ -87,6 +93,8 @@ import { SharePlaceComponent } from "./shareplace/shareplace.component";
         NorthWindOrdersComponent,
         FTSECloseComponent,
         PriceBlotterComponent,
+        PriceBlotterFxComponent,
+        TradeBlotterCDSComponent,
         ContactsComponent]
 })
 export class AppModule { }
