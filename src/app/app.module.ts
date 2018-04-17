@@ -44,7 +44,9 @@ import { SharePlaceService } from './shareplace/shareplace.service';
 import { SharePlaceComponent } from './shareplace/shareplace.component';
 import { PriceBlotterFxComponent } from './adapttableblotter/priceblotterfx.component';
 import { TradeBlotterCDSComponent } from './adapttableblotter/tradeblottercds.component';
-
+import {TradeBlotterCDSIndexComponent} from './adapttableblotter/tradeblottercdsindex.component';
+import {TradeBlotterCommodityComponent} from './adapttableblotter/tradeblottercommodity.component';
+import {TradeBlotterFXComponent} from './adapttableblotter/tradeblotterfx.component';
 
 
 @NgModule({
@@ -65,7 +67,10 @@ import { TradeBlotterCDSComponent } from './adapttableblotter/tradeblottercds.co
         TradesBolotterComponent,
         SharePlaceComponent,
         PriceBlotterFxComponent,
-        TradeBlotterCDSComponent
+        TradeBlotterCDSComponent,
+        TradeBlotterCDSIndexComponent,
+        TradeBlotterCommodityComponent,
+        TradeBlotterFXComponent
     ],
     imports: [
         BrowserModule,
@@ -95,6 +100,9 @@ import { TradeBlotterCDSComponent } from './adapttableblotter/tradeblottercds.co
         PriceBlotterComponent,
         PriceBlotterFxComponent,
         TradeBlotterCDSComponent,
+        TradeBlotterCDSIndexComponent,
+        TradeBlotterCommodityComponent,
+        TradeBlotterFXComponent,
         ContactsComponent]
 })
 export class AppModule { }

@@ -13,6 +13,10 @@ import {PriceBlotterCDSIndexEntity} from '../adapttableblotter/entities/priceblo
 import {PriceBlotterCommodityEntity} from '../adapttableblotter/entities/priceblottercommodityentity';
 import {PriceBlotterFxEntity} from '../adapttableblotter/entities/priceblotterfxentity';
 import {TradeBlotterCDSEntity} from '../adapttableblotter/entities/tradeblottercdsentity';
+import {TradeBlotterCDSIndexEntity} from '../adapttableblotter/entities/tradeblottercdsindexentity';
+import {TradeBlotterCommodityEntity} from '../adapttableblotter/entities/tradeblottercommodityentity';
+import {TradeBlotterFXEntity} from '../adapttableblotter/entities/tradeblotterfxentity';
+
 @Injectable()
 export class AdaptTableService {
 
@@ -25,6 +29,9 @@ export class AdaptTableService {
     private priceblottercommodityapiurl = './assets/priceblottercommodity.json';
     private priceblotterfxapiurl = './assets/priceblotterfx.json';
     private tradeblottercdsapiurl = './assets/tradeblottercds.json';
+    private tradeblottercdsindexapiurl = './assets/tradeblottercdsindex.json';
+    private tradeblottercommodityapiurl = './assets/tradeblottercommodity.json';
+    private tradeblotterfxapiurl = './assets/tradeblotterfx.json';
 
     constructor(private http: HttpClient) { }
 
@@ -47,6 +54,16 @@ export class AdaptTableService {
       }
       getTradeBlotterCDS (): Observable<TradeBlotterCDSEntity[]> {
         return this.http.get<TradeBlotterCDSEntity[]>(this.tradeblottercdsapiurl);
+      }
+      getTradeBlotterCommodity (): Observable<TradeBlotterCommodityEntity[]> {
+        return this.http.get<TradeBlotterCommodityEntity[]>(this.tradeblottercommodityapiurl);
+      }
+
+      getTradeBlotterCDSIndex (): Observable<TradeBlotterCDSIndexEntity[]> {
+        return this.http.get<TradeBlotterCDSIndexEntity[]>(this.tradeblottercdsindexapiurl);
+      }
+      getTradeBlotterFX (): Observable<TradeBlotterFXEntity[]> {
+        return this.http.get<TradeBlotterFXEntity[]>(this.tradeblotterfxapiurl);
       }
       getftseclose (): Observable<FTSECloseEntity[]> {
         return this.http.get<FTSECloseEntity[]>(this.ftsecloseapiurl);

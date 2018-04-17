@@ -14,6 +14,9 @@ import {PriceBlotterCDSIndexComponent} from '../adapttableblotter/priceblottercd
 import {PriceBlotterCommodityComponent} from '../adapttableblotter/priceblottercommodity.component';
 import { PriceBlotterFxComponent } from '../adapttableblotter/priceblotterfx.component';
 import { TradeBlotterCDSComponent } from '../adapttableblotter/tradeblottercds.component';
+import {TradeBlotterCDSIndexComponent} from '../adapttableblotter/tradeblottercdsindex.component';
+import {TradeBlotterCommodityComponent} from '../adapttableblotter/tradeblottercommodity.component';
+import {TradeBlotterFXComponent} from '../adapttableblotter/tradeblotterfx.component';
 @Component({
     selector: 'app-adapttableblotter',
     templateUrl: './adapttableblotter.component.html'
@@ -31,7 +34,7 @@ export class AdaptTableBlotterComponent implements OnInit {
       this.AdapttableBlotterDataSoureOptions = this.getAdaptTableDs();
       this.selectedDataSource = this.AdapttableBlotterDataSoureOptions[0];
       this.entry.clear();
-      const factory = this.resolver.resolveComponentFactory(PriceBlotterComponent);
+      const factory = this.resolver.resolveComponentFactory(ContactsComponent);
       const componentRef = this.entry.createComponent(factory);
 
     }
@@ -79,6 +82,18 @@ export class AdaptTableBlotterComponent implements OnInit {
             this.entry.clear();
             const factory = this.resolver.resolveComponentFactory(TradeBlotterCDSComponent);
             const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '10') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(TradeBlotterCDSIndexComponent);
+            const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '11') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(TradeBlotterCommodityComponent);
+            const componentRef = this.entry.createComponent(factory);
+          } else if (this.selectedDataSource.Id === '12') {
+            this.entry.clear();
+            const factory = this.resolver.resolveComponentFactory(TradeBlotterFXComponent);
+            const componentRef = this.entry.createComponent(factory);
           }
 
 
@@ -103,7 +118,10 @@ export class AdaptTableBlotterComponent implements OnInit {
             new AdaptableBlotterDsEntity('6', 'Price Blotter Commodity'),
             new AdaptableBlotterDsEntity('7', 'Price Blotter FX'),
             new AdaptableBlotterDsEntity('8', 'Trade Blotter Bond'),
-            new AdaptableBlotterDsEntity('9', 'Trade Blotter CDS')
+            new AdaptableBlotterDsEntity('9', 'Trade Blotter CDS'),
+            new AdaptableBlotterDsEntity('10', 'Trade Blotter CDS Index'),
+            new AdaptableBlotterDsEntity('11', 'Trade Blotter Commodity'),
+            new AdaptableBlotterDsEntity('12', 'Trade Blotter FX'),
         ];
     }
 }

@@ -1,0 +1,25 @@
+<h2 class="view-title">
+    <span>{{title}}</span>
+    <small class="view-title__samll">Rows : {{rows}} Columns :{{columns}}</small>
+  </h2>
+  
+  <div class="contacts-theme">
+    <igx-grid #grid1 id="grid1" [data]="tradeblotterfxentitities" [height]="'600px'" [autoGenerate]="false">
+      <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
+      <igx-column width="250px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
+      <igx-column width="250px" field="EffectiveDate" header="Effective Date" dataType="string"></igx-column>
+      <igx-column width="230px" field="DealType" header="Deal Type" dataType="number"></igx-column>
+      <igx-column width="230px" field="BaseCurrency" header="Base Currency" dataType="string"></igx-column>
+      <igx-column width="250px" field="BaseAmount" header="Base Amount" dataType="number"></igx-column>
+      <igx-column width="230px" field="SecondaryCurrency" header="Secondary Currency" dataType="string"></igx-column>    
+      <igx-column width="230px" field="SecondaryAmount" header="Secondary Amount" dataType="number"></igx-column>
+      <igx-column width="230px" field="Rate" header="Rate" dataType="number"></igx-column>
+      <igx-column width="230px" field="PnL" header="PnL" dataType="number"></igx-column>
+      <igx-column width="230px" field="Counterparty" header="Counterparty" dataType="string"></igx-column>
+      <igx-column width="230px" field="MaturityDate" header="Maturity Date" dataType="string"></igx-column>
+      <igx-column width="230px" field="Trader" header="Trader" dataType="string"></igx-column>
+      <igx-column width="230px" field="Status" header="Status" dataType="string"></igx-column>
+    </igx-grid>
+  </div>
+  
+  
