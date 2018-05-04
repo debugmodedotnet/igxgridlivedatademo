@@ -17,26 +17,44 @@ import {TradeBlotterCDSIndexEntity} from '../adapttableblotter/entities/tradeblo
 import {TradeBlotterCommodityEntity} from '../adapttableblotter/entities/tradeblottercommodityentity';
 import {TradeBlotterFXEntity} from '../adapttableblotter/entities/tradeblotterfxentity';
 
+
+
 @Injectable()
 export class AdaptTableService {
 
-    private tradesblottersapiurl = './assets/priceblotterbond.json';
-    private tradeblotterbondapiurl = './assets/tradeblotterbond.json';
+   private priceblotterbondapiurl = './assets/priceblotterbond.json';
+   private tradeblotterbondapiurl = './assets/tradeblotterbond.json';
     private contactsapiurl = './assets/contacts.json';
-    private ftsecloseapiurl = './assets/ftseclose.json';
-    private northwindsorderspiurl = './assets/northwindorders.json';
-    private priceblottercdsindexapiurl = './assets/priceblottercdsindex.json';
-    private priceblottercommodityapiurl = './assets/priceblottercommodity.json';
-    private priceblotterfxapiurl = './assets/priceblotterfx.json';
-    private tradeblottercdsapiurl = './assets/tradeblottercds.json';
-    private tradeblottercdsindexapiurl = './assets/tradeblottercdsindex.json';
+   private ftsecloseapiurl = './assets/ftseclose.json';
+   private northwindsorderspiurl = './assets/northwindorders.json';
+   private priceblottercdsindexapiurl = './assets/priceblottercdsindex.json';
+   private priceblottercommodityapiurl = './assets/priceblottercommodity.json';
+   private priceblotterfxapiurl = './assets/priceblotterfx.json';
+   private tradeblottercdsapiurl = './assets/tradeblottercds.json';
+   private tradeblottercdsindexapiurl = './assets/tradeblottercdsindex.json';
     private tradeblottercommodityapiurl = './assets/tradeblottercommodity.json';
-    private tradeblotterfxapiurl = './assets/tradeblotterfx.json';
+   private tradeblotterfxapiurl = './assets/tradeblotterfx.json';
+
+
+   // Calling REST  API
+    // private priceblotterbondapiurl = 'http://localhost:8090/api/priceblotterbond';
+    // private tradeblotterfxapiurl = 'http://localhost:8090/api/tradeblotterfx';
+    // private contactsapiurl = 'http://localhost:8090/api/contacts';
+    // private tradeblotterbondapiurl = 'http://localhost:8090/api/tradeblotterbond';
+    // private ftsecloseapiurl = 'http://localhost:8090/api/ftseclose';
+    // private northwindsorderspiurl = 'http://localhost:8090/api/northwindorders';
+    // private priceblottercdsindexapiurl = 'http://localhost:8090/api/priceblottercdsindex';
+    // private priceblottercommodityapiurl = 'http://localhost:8090/api/priceblottercommodity';
+    // private priceblotterfxapiurl = 'http://localhost:8090/api/priceblotterfx';
+    // private tradeblottercdsapiurl = 'http://localhost:8090/api/tradeblottercds';
+    // private tradeblottercdsindexapiurl = ' http://localhost:8090/api/tradeblottercdsindex';
+    // private tradeblottercommodityapiurl = 'http://localhost:8090/api/tradeblottercommodity';
+ 
 
     constructor(private http: HttpClient) { }
 
     getPriceBlotters (): Observable<PriceBlotterBondEntity[]> {
-        return this.http.get<PriceBlotterBondEntity[]>(this.tradesblottersapiurl);
+        return this.http.get<PriceBlotterBondEntity[]>(this.priceblotterbondapiurl);
       }
 
       getPriceBlottercdsIndex (): Observable<PriceBlotterCDSIndexEntity[]> {

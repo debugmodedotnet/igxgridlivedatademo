@@ -7,7 +7,7 @@ export class PriceBlotterBondEntity {
     BidOfferSpread: number;
     Bid: number;
     Ask: number;
-    IssueTracker: string;
+    IssuerTicker: string;
     Coupon: number;
     Currency: string;
     Tier: string;
@@ -24,7 +24,7 @@ export class PriceBlotterBondEntity {
         BidOfferSpread: number,
         Bid: number,
         Ask: number,
-        IssueTracker: string,
+        IssuerTicker: string,
         Coupon: number,
         Currency: string,
         Tier: string,
@@ -41,7 +41,7 @@ export class PriceBlotterBondEntity {
         this.BidOfferSpread = BidOfferSpread;
         this.Bid = Bid;
         this.Ask = Ask;
-        this.IssueTracker = IssueTracker;
+        this.IssuerTicker = IssuerTicker;
         this.Coupon = Coupon;
         this.Currency = Currency;
         this.Tier = Tier;
