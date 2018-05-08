@@ -5,12 +5,48 @@
   </h2> -->
   <br/>
 
+<div class="wrapper">
+    <span class="view-title">Rows : {{rows}} Columns :{{columns}}</span>
+    <br/>
   <igx-switch  checked="true" [checked]='false' (change)='changelivestatus($event)'>
    Live Data
 </igx-switch>
-<div class="visastock-theme">
+
+
+<div class="people-config" *ngIf='_live'>
+<label igxLabel for="slider">DataGrid Updating per - {{persec}} MiliSecond</label>
+<igx-slider  id="slider" (onValueChange)='persecvaluechange($event)' [minValue]="10" [maxValue]="500" [step]="10" [(ngModel)]="persec"></igx-slider>
+</div>
+
+</div>
+
+<div  class="visastock-theme">
   <igx-grid #grid1 id="grid1" [data]="localData" [height]="'500px'" [autoGenerate]="false">
-    <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
+    <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"> </igx-column>
+
+    <igx-column width="200" field="Coupon" header="Current Status" dataType="number">
+      <ng-template igxCell let-cell="cell">
+          <div class="cell__inner">
+              <!-- <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true" [disabled]="true">
+                 <igx-icon fontSet="material" name="arrow_upward"></igx-icon>
+              </button> -->
+            
+
+                <!-- <div>{{ cell.value }}</div> -->
+             
+           
+              <igx-icon *ngIf="cell.value > 100" name="arrow_upward" color="green" isActive="true"></igx-icon>
+             
+             
+              <igx-icon *ngIf="cell.value < 100" name="arrow_downward" color="red"  isActive="true"></igx-icon>
+       
+              <!-- <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
+                <igx-icon fontSet="material" name="format_list_bulleted"></igx-icon>
+              </button> -->
+            
+          </div>
+      </ng-template>
+  </igx-column>
     <igx-column width="220px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
     <igx-column width="190px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
     <igx-column width="190px" field="Notional" header="Notional" dataType="number"></igx-column>
@@ -30,11 +66,7 @@
     <igx-column width="190px" field="Sector" header="Sector" dataType="string"></igx-column>
     <igx-column width="190px" field="Trader" header="Trader" dataType="string"></igx-column>
     <igx-column width="190px" field="Status" header="Status" dataType="string"></igx-column>
-    <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
     <igx-column width="220px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
-    <igx-column width="190px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
-    <igx-column width="190px" field="Notional" header="Notional" dataType="number"></igx-column>
-    <igx-column width="190px" field="Coupon" header="Coupon" dataType="number"></igx-column>
     <igx-column width="190px" field="Currency" header="Currency" dataType="string"></igx-column>
     <igx-column width="350px" field="ReferenceEntity" header="Reference Entity" dataType="string"></igx-column>
     <igx-column width="190px" field="Ticker" header="Ticker" dataType="string"></igx-column>
@@ -50,11 +82,7 @@
     <igx-column width="190px" field="Sector" header="Sector" dataType="string"></igx-column>
     <igx-column width="190px" field="Trader" header="Trader" dataType="string"></igx-column>
     <igx-column width="190px" field="Status" header="Status" dataType="string"></igx-column>
-    <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
     <igx-column width="220px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
-    <igx-column width="190px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
-    <igx-column width="190px" field="Notional" header="Notional" dataType="number"></igx-column>
-    <igx-column width="190px" field="Coupon" header="Coupon" dataType="number"></igx-column>
     <igx-column width="190px" field="Currency" header="Currency" dataType="string"></igx-column>
     <igx-column width="350px" field="ReferenceEntity" header="Reference Entity" dataType="string"></igx-column>
     <igx-column width="190px" field="Ticker" header="Ticker" dataType="string"></igx-column>
@@ -70,11 +98,7 @@
     <igx-column width="190px" field="Sector" header="Sector" dataType="string"></igx-column>
     <igx-column width="190px" field="Trader" header="Trader" dataType="string"></igx-column>
     <igx-column width="190px" field="Status" header="Status" dataType="string"></igx-column>
-    <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
     <igx-column width="220px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
-    <igx-column width="190px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
-    <igx-column width="190px" field="Notional" header="Notional" dataType="number"></igx-column>
-    <igx-column width="190px" field="Coupon" header="Coupon" dataType="number"></igx-column>
     <igx-column width="190px" field="Currency" header="Currency" dataType="string"></igx-column>
     <igx-column width="350px" field="ReferenceEntity" header="Reference Entity" dataType="string"></igx-column>
     <igx-column width="190px" field="Ticker" header="Ticker" dataType="string"></igx-column>
@@ -90,11 +114,7 @@
     <igx-column width="190px" field="Sector" header="Sector" dataType="string"></igx-column>
     <igx-column width="190px" field="Trader" header="Trader" dataType="string"></igx-column>
     <igx-column width="190px" field="Status" header="Status" dataType="string"></igx-column>
-    <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
     <igx-column width="220px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
-    <igx-column width="190px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
-    <igx-column width="190px" field="Notional" header="Notional" dataType="number"></igx-column>
-    <igx-column width="190px" field="Coupon" header="Coupon" dataType="number"></igx-column>
     <igx-column width="190px" field="Currency" header="Currency" dataType="string"></igx-column>
     <igx-column width="350px" field="ReferenceEntity" header="Reference Entity" dataType="string"></igx-column>
     <igx-column width="190px" field="Ticker" header="Ticker" dataType="string"></igx-column>
@@ -110,11 +130,7 @@
     <igx-column width="190px" field="Sector" header="Sector" dataType="string"></igx-column>
     <igx-column width="190px" field="Trader" header="Trader" dataType="string"></igx-column>
     <igx-column width="190px" field="Status" header="Status" dataType="string"></igx-column>
-    <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
     <igx-column width="220px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
-    <igx-column width="190px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
-    <igx-column width="190px" field="Notional" header="Notional" dataType="number"></igx-column>
-    <igx-column width="190px" field="Coupon" header="Coupon" dataType="number"></igx-column>
     <igx-column width="190px" field="Currency" header="Currency" dataType="string"></igx-column>
     <igx-column width="350px" field="ReferenceEntity" header="Reference Entity" dataType="string"></igx-column>
     <igx-column width="190px" field="Ticker" header="Ticker" dataType="string"></igx-column>
@@ -130,11 +146,7 @@
     <igx-column width="190px" field="Sector" header="Sector" dataType="string"></igx-column>
     <igx-column width="190px" field="Trader" header="Trader" dataType="string"></igx-column>
     <igx-column width="190px" field="Status" header="Status" dataType="string"></igx-column>
-    <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
     <igx-column width="220px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
-    <igx-column width="190px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
-    <igx-column width="190px" field="Notional" header="Notional" dataType="number"></igx-column>
-    <igx-column width="190px" field="Coupon" header="Coupon" dataType="number"></igx-column>
     <igx-column width="190px" field="Currency" header="Currency" dataType="string"></igx-column>
     <igx-column width="350px" field="ReferenceEntity" header="Reference Entity" dataType="string"></igx-column>
     <igx-column width="190px" field="Ticker" header="Ticker" dataType="string"></igx-column>
@@ -150,11 +162,7 @@
     <igx-column width="190px" field="Sector" header="Sector" dataType="string"></igx-column>
     <igx-column width="190px" field="Trader" header="Trader" dataType="string"></igx-column>
     <igx-column width="190px" field="Status" header="Status" dataType="string"></igx-column>
-    <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"></igx-column>
     <igx-column width="220px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
-    <igx-column width="190px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
-    <igx-column width="190px" field="Notional" header="Notional" dataType="number"></igx-column>
-    <igx-column width="190px" field="Coupon" header="Coupon" dataType="number"></igx-column>
     <igx-column width="190px" field="Currency" header="Currency" dataType="string"></igx-column>
     <igx-column width="350px" field="ReferenceEntity" header="Reference Entity" dataType="string"></igx-column>
     <igx-column width="190px" field="Ticker" header="Ticker" dataType="string"></igx-column>

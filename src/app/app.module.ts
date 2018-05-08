@@ -14,6 +14,7 @@ import {
     IgxGridModule,
     IgxIconModule,
     IgxSliderModule,
+    IgxBadgeModule,
     IgxButtonModule,
     IgxSwitchModule
 } from 'igniteui-angular/main';
@@ -40,6 +41,7 @@ import {BankEntity} from './bankentity';
         IgxButtonModule,
         IgxSliderModule,
         IgxSwitchModule,
+        IgxBadgeModule,
         IgxGridModule.forRoot(),
         HttpClientModule
     ],
