@@ -20,8 +20,15 @@
 
 </div>
 
-<div  class="visastock-theme">
+<div  class="">
   <igx-grid #grid1 id="grid1" [data]="localData" [height]="'500px'" [autoGenerate]="false">
+   
+      <igx-column dataType="boolean" field="Subscribtion">
+          <ng-template igxCell let-cell="cell">
+              <!-- Bind the cell value through the ngModel directive and update the data source when the value is changed in the template -->
+              <input type="checkbox" [ngModel]="cell.value" (ngModelChange)="cell.update($event)" />
+          </ng-template>
+      </igx-column>
     <igx-column width="190px" field="TradeId" header="Trade Id" dataType="number"> </igx-column>
 
     <igx-column width="200" field="Coupon" header="Current Status" dataType="number">
@@ -47,13 +54,43 @@
           </div>
       </ng-template>
   </igx-column>
+  
     <igx-column width="220px" field="TradeDate" header="Trade Date" dataType="string"></igx-column>
     <igx-column width="190px" field="BuySell" header="Buy Sell" dataType="string"></igx-column>
     <igx-column width="190px" field="Notional" header="Notional" dataType="number"></igx-column>
     <igx-column width="190px" field="Coupon" header="Coupon" dataType="number"></igx-column>
+    
+    <igx-column width="220px" field="Coupon"  dataType="number" sortable="true" header="Progress">
+        <ng-template igxCell let-val>
+            <igx-linear-bar width="200px" [textVisibility]="true" class="cell__inner_2"  [value]="val"></igx-linear-bar>
+        </ng-template>
+    </igx-column>
+    <igx-column width="200" field="" header="Actions" dataType="string">
+        <ng-template igxCell let-cell="cell">
+            <div class="cell__inner_2">
+                <!-- <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true" [disabled]="true">
+                   <igx-icon fontSet="material" name="notifications"></igx-icon>
+                </button>
+                <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
+                  <igx-icon fontSet="material" name="format_list_bulleted"></igx-icon>
+                </button>
+                <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
+                  <igx-icon fontSet="material" name="refresh"></igx-icon>
+                </button> -->
+                <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
+                  <igx-icon fontSet="material" name="feedback"></igx-icon>
+                </button>
+                <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
+                    <igx-icon fontSet="material" name="visibility"></igx-icon>
+                  </button>
+            </div>
+        </ng-template>
+    </igx-column>
     <igx-column width="190px" field="Currency" header="Currency" dataType="string"></igx-column>
     <igx-column width="350px" field="ReferenceEntity" header="Reference Entity" dataType="string"></igx-column>
     <igx-column width="190px" field="Ticker" header="Ticker" dataType="string"></igx-column>
+    
+ 
     <igx-column width="350px" field="ShortName" header="Short Name" dataType="string"></igx-column>
     <igx-column width="280px" field="Counterparty" header="Counterparty" dataType="string"></igx-column>
     <igx-column width="190px" field="MaturityDate" header="Maturity Date" dataType="string"></igx-column>
