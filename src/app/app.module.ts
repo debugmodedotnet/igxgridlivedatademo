@@ -14,6 +14,7 @@ import {
     IgxGridModule,
     IgxIconModule,
     IgxSliderModule,
+    IgxDialogModule,
     IgxBadgeModule,
     IgxButtonModule,
     IgxProgressBarModule,
@@ -44,6 +45,7 @@ import {BankEntity} from './bankentity';
         IgxProgressBarModule,
         IgxSwitchModule,
         IgxBadgeModule,
+        IgxDialogModule,
         IgxGridModule.forRoot(),
         HttpClientModule
     ],

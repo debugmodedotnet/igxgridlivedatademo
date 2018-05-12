@@ -106,10 +106,10 @@
                 <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
                   <igx-icon fontSet="material" name="refresh"></igx-icon>
                 </button> -->
-                <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
+                <button  (click)="dialog.open()" class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
                   <igx-icon fontSet="material" name="feedback"></igx-icon>
                 </button>
-                <button class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
+                <button  (click)="alert .open()" class="igx-button--icon" igxRipple igxRipple="white" igxRippleCentered="true">
                     <igx-icon fontSet="material" name="visibility"></igx-icon>
                   </button>
             </div>
@@ -244,4 +244,19 @@
     <igx-column width="190px" field="Status" header="Status" dataType="string"></igx-column>
   </igx-grid>
 </div>
+
+<igx-dialog #dialog title="Info"
+leftButtonLabel="Cancel"
+(onLeftButtonSelect)="dialog.close()"
+rightButtonLabel="OK"
+(onRightButtonSelect)="dialog.close()"
+message="There are {{rows}} rows and 130 coulmns in the grid">
+</igx-dialog>
 </div>
+
+
+<igx-dialog #alert title="Notification"
+message="Your email has been sent successfully!"
+leftButtonLabel="OK"
+(onLeftButtonSelect)="alert.close()">
+</igx-dialog>
