@@ -30,16 +30,14 @@
 
 
 <div  class="">
-  <igx-grid #grid1 id="grid1" [rowHeight]="30"  [data]="localData" [height]="'500px'" [autoGenerate]="false">
-   
+
+  <igx-grid (onSelection)="handleRowSelection($event)" #grid1 id="grid1" [rowHeight]="30"  [data]="localData" [height]="'500px'" [autoGenerate]="false">
       <igx-column [pinned]="true" dataType="boolean" field="Subscribtion">
           <ng-template igxCell let-cell="cell">
-              <!-- Bind the cell value through the ngModel directive and update the data source when the value is changed in the template -->
               <input type="checkbox" [ngModel]="cell.value" (ngModelChange)="cell.update($event)" />
           </ng-template>
       </igx-column>
     <igx-column [pinned]="true" [sortable]="true"  [hasSummary]="true" width="190px" field="TradeId" header="Trade Id" [dataType]="'number'"> </igx-column>
-
     <igx-column width="200" field="Coupon" header="Current Status" dataType="number">
       <ng-template igxCell let-cell="cell">
           <div class="cell__inner">
@@ -250,13 +248,13 @@ leftButtonLabel="Cancel"
 (onLeftButtonSelect)="dialog.close()"
 rightButtonLabel="OK"
 (onRightButtonSelect)="dialog.close()"
-message="There are {{rows}} rows and 130 coulmns in the grid">
+message="There are {{rows}} rows and 130 coulmns in the grid. Selected Ticker {{selectedTicker}}">
 </igx-dialog>
 </div>
 
 
 <igx-dialog #alert title="Notification"
-message="Your email has been sent successfully!"
+message="Your email has been sent successfully! Selected Ticker {{selectedTicker}}"
 leftButtonLabel="OK"
 (onLeftButtonSelect)="alert.close()">
 </igx-dialog>

@@ -22,6 +22,7 @@ export class AppComponent implements OnInit, AfterViewInit , OnDestroy {
   private _live = false;
   private _timer;
   persec = 10;
+  selectedTicker: string;
   buysellarray = [
     'Buy',
     'Sell'
@@ -68,6 +69,12 @@ export class AppComponent implements OnInit, AfterViewInit , OnDestroy {
     this.grid.data = this.localData;
     this.grid.markForCheck();
     this.rows = this.localData.length;
+  }
+
+  handleRowSelection(args) {
+
+      console.log(args.cell.row.rowData.Ticker);
+      this.selectedTicker = args.cell.row.rowData.Ticker;
   }
 
   getMoreData(count): BankEntity[] {
